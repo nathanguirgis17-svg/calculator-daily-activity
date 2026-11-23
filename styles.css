@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #eef2f8;
+  color: #172033;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.calculator {
+  width: min(100%, 360px);
+  padding: 28px;
+  border: 1px solid #e3e8f0;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 18px 50px rgb(34 51 84 / 12%);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.65rem;
+  letter-spacing: -0.04em;
+}
+
+.subtitle {
+  margin: 5px 0 22px;
+  color: #778198;
+  font-size: 0.9rem;
+}
+
+.display {
+  display: block;
+  width: 100%;
+  min-height: 82px;
+  margin-bottom: 16px;
+  padding: 20px 16px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #f3f6fb;
+  color: #172033;
+  font-size: clamp(2rem, 10vw, 2.8rem);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  min-height: 58px;
+  border: 0;
+  border-radius: 13px;
+  background: #f3f6fb;
+  color: #25314a;
+  font: inherit;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 120ms ease, transform 120ms ease;
+}
+
+button:hover {
+  background: #e7edf7;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+button:focus-visible {
+  outline: 3px solid #8daeff;
+  outline-offset: 2px;
+}
+
+button.operator {
+  background: #eaf0ff;
+  color: #315ed1;
+}
+
+button.operator:hover {
+  background: #dce6ff;
+}
+
+button.clear {
+  background: #fff0ef;
+  color: #c74740;
+}
+
+button.clear:hover {
+  background: #ffe2df;
+}
+
+button.equals {
+  grid-column: 4;
+  grid-row: 3 / span 2;
+  background: #315ed1;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+button.equals:hover {
+  background: #244db9;
+}
+
+button.zero {
+  grid-column: span 2;
+}
+
+.hint {
+  margin: 18px 0 0;
+  color: #8a93a5;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+@media (max-width: 380px) {
+  .calculator {
+    padding: 22px;
+  }
+  .buttons {
+    gap: 8px;
+  }
+  button {
+    min-height: 54px;
+  }
+}
